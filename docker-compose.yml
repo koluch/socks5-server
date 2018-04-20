@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  socks5:
+    restart: always
+    image: koluch/go-socks-server
+    env_file:
+      - ./env.env
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:1080:1080"
